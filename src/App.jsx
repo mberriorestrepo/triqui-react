@@ -38,6 +38,7 @@ function App() {
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
 
+    // save game in storage
     saveGameToStorage({
       board: newBoard,
       turn: newTurn
