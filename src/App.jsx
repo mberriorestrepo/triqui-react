@@ -8,7 +8,7 @@ import { Table } from './components/Table'
 import { resetGameStorage } from './logic/storage'
 import { useLocalStorage } from './logic/storage/useLocalStorage'
 
-function App() {
+function App () {
   // DE ESTA FORMA NO FUNCIONA EL LOCAL STORAGE EN REACT
   // CREAMOS UN HOOK "useLocalStorage" PARA USAR EL LOCAL STORAGE
 
@@ -34,8 +34,8 @@ function App() {
   // esto solo se ejecutará una vez en el ciclo de vida del componente
   // o cada que cambien alguna dependencia en "[]"
   // ejem: [winner] -> cada que cambia el winner se ejecutara este
-  // siempre hay que pasarle unas dependecias para 
-  // que no haga un loop, o ciclo infinito o en 
+  // siempre hay que pasarle unas dependecias para
+  // que no haga un loop, o ciclo infinito o en
   // su defecto un array vacio []
   useEffect(() => {
     if (checkWinnerFrom(board)) {
@@ -93,9 +93,12 @@ function App() {
         board={board}
         updateBoard={updateBoard}
         turn={turn}
-      ></Table>
+      />
 
-      <WinnerModal resetGame={resetGame}  winner={winner}></WinnerModal>
+      <WinnerModal
+        resetGame={resetGame}
+        winner={winner}
+      />
     </main>
   )
 }
